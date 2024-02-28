@@ -31,7 +31,7 @@ exports.crearMeta = async (req, res) => {
 
 exports.eliminarMeta = async (req, res) => {
     try {
-        const result = await Meta.deleteOne({ nombre: req.body.nombre });
+        const result = await Meta.deleteOne({ nombre: req.body.nombre   });
 
         if (result.deletedCount === 0) {
             res.status(404).json(`La meta [ ${req.body.nombre} ] no existe.`);

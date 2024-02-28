@@ -43,7 +43,7 @@ require("./app/routes/auth.routes")(app);
 require("./app/routes/Socio.routes")(app);
 require("./app/routes/producto.routes")(app);
 require("./app/routes/meta.routes")(app);
-require("./app/routes/emprendedora.routes")(app);
+require("./app/routes/ticket.routes")(app);
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8080;

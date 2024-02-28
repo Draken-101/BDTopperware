@@ -1,9 +1,6 @@
-// controllers/ticketController.js
-
 const db = require("../models");
-const Ticket = db.Ticket;
+const Ticket = db.ticket;
 
-// Aca se obtienen los tickets 
 exports.getTickets = async (req, res) => {
   try {
     const tickets = await Ticket.find();
@@ -13,7 +10,6 @@ exports.getTickets = async (req, res) => {
   }
 };
 
-// aca se crea un nuevo ticket
 exports.crearTicket = async (req, res) => {
   try {
     const nuevoTicket = new Ticket({
@@ -32,39 +28,5 @@ exports.crearTicket = async (req, res) => {
     res.status(201).json(nuevoTicket);
   } catch (error) {
     res.status(400).json({ message: error.message });
-  }
-};
-
-// Actualiza un ticket exsistente
-exports.actualizarTicket = async (req, res) => {
-  try {
-    const ticketActualizado = await Ticket.findByIdAndUpdate(
-      req.params.id,
-      req.body,
-      { new: true }
-    );
-
-    if (!ticketActualizado) {
-      return res.status(404).json({ message: "Ticket no encontrado." });
-    }
-
-    res.status(200).json(ticketActualizado);
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-};
-
-// Elimina un ticket 
-exports.eliminarTicket = async (req, res) => {
-  try {
-    const resultado = await Ticket.findByIdAndDelete(req.params.id);
-
-    if (!resultado) {
-      return res.status(404).json({ message: "Ticket no encontrado." });
-    }
-
-    res.status(200).json({ message: "Ticket eliminado correctamente." });
-  } catch (error) {
-    res.status(500).json({ message: error.message });
   }
 };
