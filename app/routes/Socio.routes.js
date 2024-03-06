@@ -9,17 +9,7 @@ module.exports = function(app) {
     );
     next();
   });
-
-  app.get("/api/test/all", controller.allAccess);
-
-  app.get("/api/test/socio", [authJwt.verifyToken], controller.socioBoard);
-
-  app.get(
-    "/api/test/mod",
-    [authJwt.verifyToken, authJwt.isModerator],
-    controller.moderatorBoard
-  );
-
+  
   app.get(
     "/api/test/admin",
     [authJwt.verifyToken, authJwt.isAdmin],

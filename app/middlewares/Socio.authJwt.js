@@ -55,40 +55,8 @@ let isAdmin = (req, res, next) => {
   });
 };
 
-let isModerator = (req, res, next) => {
-  Socio.findById(req.socioId).exec((err, socio) => {
-    if (err) {
-      res.status(500).send({ message: err });
-      return;
-    }
-
-    Role.find(
-      {
-        _id: { $in: socio.roles }
-      },
-      (err, roles) => {
-        if (err) {
-          res.status(500).send({ message: err });
-          return;
-        }
-
-        for (let i = 0; i < roles.length; i++) {
-          if (roles[i].name === "moderator") {
-            next();
-            return;
-          }
-        }
-
-        res.status(403).send({ message: "Require Moderator Role!" });
-        return;
-      }
-    );
-  });
-};
-
 const authJwt = {
   verifyToken,
-  isAdmin,
-  isModerator
+  isAdmin
 };
 module.exports = authJwt;

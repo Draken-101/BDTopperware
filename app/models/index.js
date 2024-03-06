@@ -13,6 +13,6 @@ db.emprendedora = require("./emprendedora.model")
 db.ticket = require("./ticket.model")
 
 
-db.ROLES = ["socio", "admin", "moderator"];
+db.ROLES = ["Emprendedora", "admin"];
 
 module.exports = db;

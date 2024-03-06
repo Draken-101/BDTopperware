@@ -1,6 +1,5 @@
 
 const mongoose = require("mongoose");
-
 const ProductoSchema = new mongoose.Schema({
   nombre: {
     type: String,
@@ -22,9 +21,7 @@ const ProductoSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  
 });
-
 const Producto = mongoose.model("Producto", ProductoSchema);
-
 module.exports = Producto;
+// Agregar Color, Categoria, Descripcion y Tipo

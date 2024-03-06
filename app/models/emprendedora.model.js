@@ -49,6 +49,12 @@ const EmprendedoraSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  role: [
+    {
+      type: String,
+      default: ""
+    }
+  ]
 });
 
 const Emprendedora = mongoose.model("Emprendedora", EmprendedoraSchema);
