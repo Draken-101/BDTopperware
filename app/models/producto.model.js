@@ -5,10 +5,27 @@ const ProductoSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  stylo:{
+   type:String
+  },
   clave: {
     type: String,
     required: true,
   },
+  descripcion:{
+      type: String,
+      required: true,
+  },
+  categoria:{
+     type: String,
+     require:true,
+
+  },
+   tipo:[
+    {
+     type: Object
+    }
+   ],
   cantidad: {
     type: Number,
     required: true,
@@ -17,6 +34,7 @@ const ProductoSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
+
   img: {
     type: String,
     required: true,
@@ -24,4 +42,4 @@ const ProductoSchema = new mongoose.Schema({
 });
 const Producto = mongoose.model("Producto", ProductoSchema);
 module.exports = Producto;
-// Agregar Color, Categoria, Descripcion y Tipo
+// Agregar stylo, Categoria, Descripcion y Tipo

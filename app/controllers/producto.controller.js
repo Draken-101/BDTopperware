@@ -12,14 +12,19 @@ exports.getTodosLosProductos = async (req, res) => {
 };
 
 exports.crearProducto = async (req, res) => {
-
     try {
         const nuevoProducto = new Producto({
             nombre: req.body.nombre,
             clave: req.body.clave,
             cantidad: req.body.cantidad,
             precio: req.body.precio,
-            img: req.body.img
+            stylo: req.body.stylo,
+            img: req.body.img,
+            categoria: req.body.categoria,
+            descripcion: req.body.descripcion,
+            tipo: req.body.tipo,
+            
+
         });
         Producto.create(nuevoProducto);
         res.status(201).json("El producto [ " + req.body.nombre + " ] se a guardado!!!");

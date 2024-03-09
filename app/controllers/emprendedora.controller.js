@@ -18,13 +18,10 @@ exports.crearEmprendedora = async (req, res) => {
       nombre: req.body.nombre,
       numero_Cliente: req.body.numero_Cliente,
       ruta: req.body.ruta,
-      semanas: {
-        uno: req.body.semanas.uno,
-        dos: req.body.semanas.dos,
-        tres: req.body.semanas.tres
-      },
+      tips: req.body.tips,
       venta_Total: vT,
       img: req.body.img
+      
     });
 
     Emprendedora.create(nuevaEmprendedora);

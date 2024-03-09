@@ -13,8 +13,14 @@ const EmprendedoraSchema = new mongoose.Schema({
   ruta:{
     type: Boolean,
     required: true ,
-    
+
   },
+  tips:[
+    {
+      type: Object,
+    }
+  ],
+
   semanas: {
     uno: {
       nombre: {

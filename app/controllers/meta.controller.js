@@ -19,7 +19,8 @@ exports.crearMeta = async (req, res) => {
             nombre: req.body.nombre,
             descripcion: req.body.descripcion,
             venta_Necesaria: req.body.venta_Necesaria,
-            img: req.body.img
+            img: req.body.img,
+            tipo: req.body.tipo
         });
         Meta.create(nuevaMeta);
         res.status(201).json("La meta [ " + req.body.nombre + " ] se a guardado!!!");

@@ -24,7 +24,7 @@ exports.crearTicket = async (req, res) => {
     });
 
     await nuevoTicket.save();
-
+    
     res.status(201).json(nuevoTicket);
   } catch (error) {
     res.status(400).json({ message: error.message });
