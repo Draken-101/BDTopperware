@@ -17,6 +17,7 @@ exports.crearEmprendedora = async (req, res) => {
     const nuevaEmprendedora = new Emprendedora({
       nombre: req.body.nombre,
       numero_Cliente: req.body.numero_Cliente,
+      ruta: req.body.ruta,
       semanas: {
         uno: req.body.semanas.uno,
         dos: req.body.semanas.dos,
@@ -33,8 +34,6 @@ exports.crearEmprendedora = async (req, res) => {
     res.status(400).json({ message: error.message });
   }
 };
-
-
 
 exports.eliminarEmprendedora = async (req, res) => {
   try {
@@ -56,6 +55,7 @@ exports.modificarEmprendedora = async (req, res) => {
   const nuevaEmprendedora = {
     nombre: req.body.nombre,
     numero_Cliente: req.body.numero_Cliente,
+    ruta: req.body.ruta,
     semanas: {
       uno: req.body.semanas.uno,
       dos: req.body.semanas.dos,

@@ -5,9 +5,15 @@ const EmprendedoraSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+ 
   numero_Cliente: {
     type: Number,
     required: true,
+  },
+  ruta:{
+    type: Boolean,
+    required: true ,
+    
   },
   semanas: {
     uno: {
@@ -54,6 +60,7 @@ const EmprendedoraSchema = new mongoose.Schema({
       type: String,
       default: ""
     }
+
   ]
 });
 
