@@ -25,7 +25,12 @@ exports.getCarritoPorId = async (req, res) => {
 
 exports.crearCarrito = async (req, res) => {
     try {
-        const nuevoCarrito = await Carrito.create(req.body);
+        const nuevoCarrito = new Carrito({
+            cantidadProductos: req.body.cantidadProductos,
+            precioTotal: req.body.precioTotal,
+            productos: req.body.productos
+        });
+        await Carrito.create(nuevoCarrito);
         res.status(201).json({ message: "Carrito creado con éxito", carrito: nuevoCarrito });
     } catch (error) {
         res.status(400).json({ message: error.message });

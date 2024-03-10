@@ -1,22 +1,19 @@
 const mongoose = require("mongoose");
 
 const CarritoSchema = new mongoose.Schema({
-    valorDeArticulo: {
-        type: Number,
-        required: true,
-    },
-    valorFinalCompra: {
-        type: Number,
-        required: true,
-    },
     cantidadProductos: {
         type: Number,
         required: true,
     },
-    descripcionProductos: {
+   precioTotal: {
+    type: Number,
+    required: true
+    },
+    productos: {
         type: String,
-        required: true,
+        required: true
     }
+    
 });
 
 const Carrito = mongoose.model("Carrito", CarritoSchema);

@@ -23,8 +23,6 @@ exports.crearProducto = async (req, res) => {
             categoria: req.body.categoria,
             descripcion: req.body.descripcion,
             tipo: req.body.tipo,
-            
-
         });
         Producto.create(nuevoProducto);
         res.status(201).json("El producto [ " + req.body.nombre + " ] se a guardado!!!");
